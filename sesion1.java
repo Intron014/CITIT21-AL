@@ -18,17 +18,17 @@ public class sesion1 {
         return pos < array.length && array[pos] == search;
     }
 // Ejercicio 1.2b
-    static boolean busquedaBinaria(int array[], int search) {
-        boolean encontrado = false;
-        int pos = array.length / 2;
-        int diff;
-        if (array[pos] == search) {
-            encontrado = true;
-        } else if (array[pos] < search) {
-            encontrado = busquedaBinaria(array[0:pos-1], search);
-        }
-        return pos < array.length && search == array[pos];
-    }
+//    static boolean busquedaBinaria(int array[], int search) {
+//        boolean encontrado = false;
+//        int pos = array.length / 2;
+//        int diff;
+//        if (array[pos] == search) {
+//            encontrado = true;
+//        } else if (array[pos] < search) {
+//            encontrado = busquedaBinaria(array[0:pos-1], search);
+//        }
+//        return pos < array.length && search == array[pos];
+//    }
 // Ejercicio 1.3a
     static int[][] transMatriz(int[][] matriz) {
         int[][] matTrans = new int[matriz[0].length][matriz.length];
