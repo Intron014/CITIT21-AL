@@ -4,20 +4,28 @@ import java.util.Arrays;
 public class sesion2 {
 
     public static void main(String[] args) {
-        int[] array = new int[] {12, 3, -2, 1, 7, 8, -31};
-        System.out.println(array.length);
+        int[] array = new int[] {12, 3, -2, 1, 7, 8, -31, 43};
+        algoritmoPorInsercion(array);
         combSort(array);
-        System.out.println(Arrays.toString(array));
+        algoritmoPorBurbuja(array);
     }
     static int[] algoritmoPorSeleccion(int[] array){ //No es estable
         //TODO: Arreglar
         return array;
     }
-    static int[] algoritmoPorInsercion(int[] array){ //Estable
-        //TODO: Arreglar
-        return array;
+    static void algoritmoPorInsercion(int[] array){ //Estable
+        for(int a = 0 ; a < array.length - 1 ; a ++){
+            for(int b = array.length - 1 ; b > a ; b --){
+                if(array[a]>array[b]){
+                    int aux = array[a];
+                    array[a] = array[b];
+                    array[b] = aux;
+                }
+            }
+        }
+        System.out.println(Arrays.toString(array));
     }
-    static int[] algoritmoPorBurbuja(int[] array) { //Estable
+    static void algoritmoPorBurbuja(int[] array) { //Estable
         int a;
         int cnt;
         for(cnt = 0; cnt < array.length - 1; cnt++){
@@ -29,9 +37,9 @@ public class sesion2 {
                 }
             }
         }
-        return array;
+        System.out.println(Arrays.toString(array));
     }
-    static int[] combSort(int[] array) { //No es estable
+    static void combSort(int[] array) { //No es estable
         int gap = array.length - 1;
         int a;
         for(;gap>0;gap--){
@@ -43,7 +51,7 @@ public class sesion2 {
                 }
             }
         }
-        return array;
+        System.out.println(Arrays.toString(array));
     }
 
 }
