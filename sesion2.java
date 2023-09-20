@@ -5,13 +5,27 @@ public class sesion2 {
 
     public static void main(String[] args) {
         int[] array = new int[] {12, 3, -2, 1, 7, 8, -31, 43};
+        algoritmoPorSeleccion(array);
         algoritmoPorInsercion(array);
         combSort(array);
         algoritmoPorBurbuja(array);
     }
-    static int[] algoritmoPorSeleccion(int[] array){ //No es estable
-        //TODO: Arreglar
-        return array;
+    static void algoritmoPorSeleccion(int[] array){ //No es estable
+        int a;
+        int b;
+        int c;
+        for(a = 0 ; a < array.length - 1 ; a ++){
+            c = a;
+            for(b = a + 1 ; b < array.length ; b ++){
+                if(array[b] < array[c]){
+                    c = b;
+                }
+            }
+            int aux = array[a];
+            array[a] = array[c];
+            array[c] = aux;
+        }
+        System.out.println(Arrays.toString(array));
     }
     static void algoritmoPorInsercion(int[] array){ //Estable
         for(int a = 0 ; a < array.length - 1 ; a ++){
