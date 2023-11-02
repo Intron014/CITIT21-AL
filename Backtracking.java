@@ -1,3 +1,4 @@
+
 public class Backtracking {
     int[] problema2undescore4mine(int[] pesos, int pMax, int[] pesosMochilas, int nivel, int[] mejorSolucion, int mejorDiferencia, Booleano exito) {
         if (nivel == pesos.length - 1) {
@@ -46,7 +47,7 @@ public class Backtracking {
         }
         return ok.getValor();
     }
-    void problema2underscore3(int[] ori, int[] fin, int id, int dur, boolean[] s, Integer mejorValor, boolean[] mejorSolucion){
+    void problema2underscore3(int[] ori, int[] fin, int id, int dur, boolean[] s, Entero mejorValor, boolean[] mejorSolucion){
         if(mejorValor.getValor()<dur) {
             mejorValor.setValor(dur);
             for (int i = 0; i < s.length; i++) {
@@ -63,7 +64,7 @@ public class Backtracking {
             }
         }
     }
-    void problema2underscore4(int[] peso, int pMax, int id, int p1, int p2, int[] s, Integer mejorValor, int[] mejorSol){
+    void problema2underscore4(int[] peso, int pMax, int id, int p1, int p2, int[] s, Entero mejorValor, int[] mejorSol){
         // I'm dying here and I don't know what to do. Do I feel stupid for thinking I could make it here?
         // Yeah, very much so. How foolish of me. Anyways, this cake is great, it's so delicious and moist.
         // Anyways... [REDACTED]
@@ -89,4 +90,90 @@ public class Backtracking {
             }
         }
     }
+
+    public static void main(String[] args){
+        int[][] requests = {{0,1},{1,0},{0,1},{1,2},{2,0},{3,4}};
+        int n = 5;
+        int[] array = {8,15,10,20,8};
+        int kobj = 2;
+        System.out.println();
+        Backtracking bt = new Backtracking();
+        System.out.println(bt.dC(array, kobj));
+        System.out.println(bt.maximumRequests(n, requests));
+    }
+    //https://leetcode.com/problems/fair-distribution-of-cookies/
+    private void dCR(int[] cookies, int lvl, Entero bestvalue, int[] mejorsoluc, int k, int[] tsol) {
+        if(lvl == cookies.length){
+            int max = 0;
+            for(int i = 0; i < k; i++){
+                if(tsol[i] > max){
+                    max = tsol[i];
+                }
+            }
+            if(max < bestvalue.getValor()){
+                bestvalue.setValor(max);
+                for(int i = 0; i < k; i++){
+                    mejorsoluc[i] = tsol[i];
+                }
+            }
+        }
+        else{
+            for(int i = 0; i < k; i++){
+                tsol[i] += cookies[lvl];
+                dCR(cookies, lvl+1, bestvalue, mejorsoluc, k, tsol);
+                tsol[i] -= cookies[lvl];
+            }
+        }
+    }
+    public int dC(int[] cookies, int k){
+        int[] tsol = new int[k];
+        int[] mejorsoluc = new int[k];
+        Entero bestvalue = new Entero(Integer.MAX_VALUE);
+        dCR(cookies, 0, bestvalue, mejorsoluc, k, tsol);
+        return bestvalue.getValor();
+    }
+
+    //https://leetcode.com/problems/maximum-number-of-achievable-transfer-requests/
+    //We have n buildings numbered from 0 to n - 1. Each building has a number of employees. It's transfer season,
+    //and some employees want to change the building they reside in.
+    //
+    //You are given an array requests where requests[i] = [fromi, toi] represents an employee's request to transfer
+    //from building fromi to building toi.
+    //
+    //All buildings are full, so a list of requests is achievable only if for each building, the net change in employee
+    //transfers is zero. This means the number of employees leaving is equal to the number of employees moving in.
+    //For example if n = 3 and two employees are leaving building 0, one is leaving building 1, and one is leaving
+    //building 2, there should be two employees moving to building 0, one employee moving to building 1,
+    //and one employee moving to building 2.
+    //
+    //Return the maximum number of achievable requests.
+    public int maximumRequests(int n, int[][] requests) {
+        int[] tsol = new int[n];
+        Entero bestvalue = new Entero(Integer.MAX_VALUE);
+        mRR(n, requests, 0, tsol, bestvalue);
+        return bestvalue.getValor();
+    }
+
+    private void mRR(int n, int[][] requests, int lvl, int[] tsol, Entero bestvalue){
+        if(lvl == requests.length){
+            int max = 0;
+            for(int i = 0; i < n; i++){
+                if(tsol[i] > max){
+                    max = tsol[i];
+                }
+            }
+            if(max < bestvalue.getValor()){
+                bestvalue.setValor(max);
+            }
+        }
+        else{
+            tsol[requests[lvl][0]]--;
+            tsol[requests[lvl][1]]++;
+            mRR(n, requests, lvl+1, tsol, bestvalue);
+            tsol[requests[lvl][0]]++;
+            tsol[requests[lvl][1]]--;
+            mRR(n, requests, lvl+1, tsol, bestvalue);
+        }
+    }
+
 };
