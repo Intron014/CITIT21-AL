@@ -1,6 +1,6 @@
-public class Integer {
+public class Entero {
     private int valor;
-    public Integer(int valor) {
+    public Entero(int valor) {
         this.valor = valor;
     }
     public int getValor() {
