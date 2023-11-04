@@ -1,3 +1,5 @@
+package DyV;
+
 public class tema7 {
 
     public static void main(String[] args){

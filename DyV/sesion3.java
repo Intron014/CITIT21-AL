@@ -1,3 +1,5 @@
+package DyV;
+
 public class sesion3 {
     public static void main(String[] args) {
         int[] arraya = {12,3,4,-21,8,10,5,6,1};

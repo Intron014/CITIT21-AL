@@ -1,3 +1,5 @@
+package DyV;
+
 public class sesion1 {
     // Ejercicio 1.1
     static int maxEnArray(int[] array) {
