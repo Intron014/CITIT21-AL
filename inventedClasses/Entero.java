@@ -1,3 +1,5 @@
+package inventedClasses;
+
 public class Entero {
     private int valor;
     public Entero(int valor) {

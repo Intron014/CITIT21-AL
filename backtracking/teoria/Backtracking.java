@@ -1,4 +1,5 @@
-
+package backtracking.teoria;
+import inventedClasses.*;
 public class Backtracking {
     int[] problema2undescore4mine(int[] pesos, int pMax, int[] pesosMochilas, int nivel, int[] mejorSolucion, int mejorDiferencia, Booleano exito) {
         if (nivel == pesos.length - 1) {

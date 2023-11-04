@@ -1,3 +1,5 @@
+package inventedClasses;
+
 public class Booleano {
     private boolean valor;
     public Booleano(boolean valor) {

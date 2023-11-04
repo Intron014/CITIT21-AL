@@ -1,3 +1,5 @@
+import inventedClasses.Booleano;
+
 import java.util.Arrays;
 
 public class tema8 {
