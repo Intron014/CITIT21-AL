@@ -8,5 +8,10 @@ public class main {
         int[] array = {1, 3, 2, 5, 1, 4, 2, 1};
         int pMax = 10;
         System.out.println(Arrays.toString(test.distribucionCarga2(array, pMax)));
+        prob1_3 test3 = new prob1_3();
+
+        int[] comienzo = {5, 2, 4, 2, 6, 0, 6, 2};
+        int[] fin = {9, 4, 5, 5, 7, 3, 8, 5};
+        System.out.println(Arrays.toString(test3.maxUsoRecurso(comienzo, fin)));
     }
 }

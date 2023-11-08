@@ -31,18 +31,19 @@ public class prob1_4 {
             int diferencia = Math.abs(pesoAcumul[0] - pesoAcumul[1]);
             if(diferencia < mejorDif.getValor()){
                 mejorDif.setValor(diferencia);
-                for (int i = 0; i < distrib.length; i++)
-                    mejorDist[i] = distrib[i];            }
+                System.arraycopy(distrib, 0, mejorDist, 0, distrib.length);
+            }
         } else {
             for(int c = 0; c < 2 ; c++){
                 if((pesoAcumul[c] + pesos[nivel]) <= pmax){
                     distrib[nivel] = c + 1;
-                    pesoAcumul[c] = pesoAcumul[c] + pesos[c];
+                    pesoAcumul[c] = pesoAcumul[c] + pesos[nivel];
                     dC2R(pesos, pmax, nivel + 1, distrib, pesoAcumul, mejorDist, mejorDif);
-                    pesoAcumul[c] = pesoAcumul[c] - pesos[c];
+                    pesoAcumul[c] = pesoAcumul[c] - pesos[nivel];
                     distrib[nivel] = 0;
                 }
             }
         }
     }
+
 }
