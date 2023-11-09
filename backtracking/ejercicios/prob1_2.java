@@ -5,9 +5,9 @@ import inventedClasses.Booleano;
 public class prob1_2 {
 
     /*
-    Dado un vector, v, que contiene los valores de un conjunto de elementos, se
-    desea comprobar si existen dos subconjuntos de elementos tal que la suma de valores de
-    cada subconjunto sea exactamente igual a un valor predeterminado vObjetivo.
+     Dado un vector, v, que contiene los valores de un conjunto de elementos, se
+     desea comprobar si existen dos subconjuntos de elementos tal que la suma de valores de
+     cada subconjunto sea exactamente igual a un valor predeterminado vObjetivo.
      */
 
     public boolean dosSubconjuntos(int[] v, int vObjetivo){

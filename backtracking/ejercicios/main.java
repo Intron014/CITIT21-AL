@@ -14,8 +14,8 @@ public class main {
         int[] fin = {9, 4, 5, 5, 7, 3, 8, 5};
         System.out.println(Arrays.toString(test3.maxUsoRecurso(comienzo, fin)));
 
-        int[] arrayx = {4, 2, 5, 5, 1, 8};
         prob1_2 test2 = new prob1_2();
+        int[] arrayx = {4, 2, 5, 5, 1, 8};
         System.out.println(test2.dosSubconjuntos(arrayx, 10));
     }
 }

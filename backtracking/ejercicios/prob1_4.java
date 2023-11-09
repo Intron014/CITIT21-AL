@@ -7,10 +7,10 @@ import java.util.Arrays;
 public class prob1_4 {
 
     /*
-    Se dispone de dos contenedores, cada uno capaz de soportar un peso máximo,
-    y un conjunto de productos, cada uno con un peso característico. Se pretende distribuir
-    todos los productos entre los dos contenedores de forma que el reparto del peso sea lo
-    más equilibrado posible
+     Se dispone de dos contenedores, cada uno capaz de soportar un peso máximo,
+     y un conjunto de productos, cada uno con un peso característico. Se pretende distribuir
+     todos los productos entre los dos contenedores de forma que el reparto del peso sea lo
+     más equilibrado posible
      */
 
     public int[] distribucionCarga2(int[] pesos, int pmax){

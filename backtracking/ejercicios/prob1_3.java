@@ -3,6 +3,7 @@ package backtracking.ejercicios;
 import inventedClasses.Entero;
 
 public class prob1_3 {
+
     /*
      Se dispone de una lista de trabajos que tienen asociado un instante de
      comienzo ci y un instante de finalización fi, donde ci<fi, de forma que cada trabajo
@@ -12,6 +13,7 @@ public class prob1_3 {
      quiere obtener el conjunto de trabajos mutuamente compatibles que maximice el
      tiempo que está en uso el recurso
      */
+
     public boolean[] maxUsoRecurso(int[] comienzo, int[] fin){
         boolean[] seleccionados = new boolean[comienzo.length];
         boolean[] mejorSeleccionados = new boolean[comienzo.length];
