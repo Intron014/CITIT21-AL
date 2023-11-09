@@ -24,7 +24,8 @@ public class prob1_4 {
         return mejorDist;
     }
 
-    private void dC2R(int[] pesos, int pmax, int nivel, int[] distrib, int[] pesoAcumul, int[] mejorDist, Entero mejorDif){
+    private void dC2R(int[] pesos, int pmax, int nivel, int[] distrib, int[] pesoAcumul,
+                      int[] mejorDist, Entero mejorDif){
         if(nivel == pesos.length){
             int diferencia = Math.abs(pesoAcumul[0] - pesoAcumul[1]);
             if(diferencia < mejorDif.getValor()){

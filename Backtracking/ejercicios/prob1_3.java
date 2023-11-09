@@ -22,7 +22,8 @@ public class prob1_3 {
         mURR(comienzo, fin, 0, seleccionados, usoRecurso, mejorSeleccionados, mejorUsoRecurso);
         return mejorSeleccionados;
     }
-    private void mURR(int[] comienzo, int[] fin, int tarea, boolean[] seleccionados, int usoRecurso, boolean[] mejorSeleccionados, Entero mejorUsoRecurso){
+    private void mURR(int[] comienzo, int[] fin, int tarea, boolean[] seleccionados, int usoRecurso,
+                      boolean[] mejorSeleccionados, Entero mejorUsoRecurso){
         if(tarea == comienzo.length){
             if(usoRecurso > mejorUsoRecurso.getValor()){
                 mejorUsoRecurso.setValor(usoRecurso);

@@ -14,7 +14,8 @@ public class nov2021 {
         sS0MER(v, solucion, bestSolucion, numElem, acumula, nivel, bestNumElem);
         return bestSolucion;
     }
-    private void sS0MER(int[] v, boolean[] solucion, boolean[] bestSolucion, int numElem, int acum, int nivel, Entero bestNumElem){
+    private void sS0MER(int[] v, boolean[] solucion, boolean[] bestSolucion,
+                        int numElem, int acum, int nivel, Entero bestNumElem){
         if(nivel == v.length){
             if((acum == 0) && (numElem > bestNumElem.getValor())){
                 bestNumElem.setValor(numElem);
