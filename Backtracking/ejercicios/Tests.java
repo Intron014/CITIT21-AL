@@ -5,7 +5,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class Tests {
 
-    @org.junit.jupiter.api.Test
+    @Test
     void prob1_4() {
         prob1_4 test = new prob1_4();
         int[] array = {1, 3, 2, 5, 1, 4, 2, 1};
@@ -14,7 +14,7 @@ class Tests {
         assertArrayEquals(ans, test.distribucionCarga2(array, pMax));
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void prob1_3() {
         prob1_3 test = new prob1_3();
         int[] comienzo = {5, 2, 4, 2, 6, 0, 6, 2};
