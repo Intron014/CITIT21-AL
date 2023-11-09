@@ -2,6 +2,11 @@ package Backtracking.exams;
 import TheOtherClasses.*;
 public class nov2021 {
 
+    /*
+     Dado un array de números enteros, se pide obtener el subconjunto de valores
+     del array con mayor número de elementos cuya suma sea igual a 0
+     */
+
     public boolean[] subSuma0MaxElem(int[] v){
         boolean[] solucion = new boolean[v.length];
         boolean[] bestSolucion = new boolean[v.length];
