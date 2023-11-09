@@ -1,6 +1,6 @@
-package backtracking.ejercicios;
+package Backtracking.ejercicios;
 
-import inventedClasses.Entero;
+import TheOtherClasses.Entero;
 
 public class prob1_3 {
 

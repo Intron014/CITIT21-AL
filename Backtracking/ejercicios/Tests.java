@@ -1,8 +1,7 @@
-package backtracking.ejercicios;
+package Backtracking.ejercicios;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
-import java.util.Arrays;
 
 class Tests {
 

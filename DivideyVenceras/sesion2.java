@@ -1,6 +1,5 @@
-package DyV;
+package DivideyVenceras;
 
-import java.lang.reflect.Array;
 import java.util.Arrays;
 
 public class sesion2 {

@@ -1,4 +1,4 @@
-package backtracking.exams;
+package Backtracking.exams;
 import static org.junit.jupiter.api.Assertions.*;
 
 class Tests {

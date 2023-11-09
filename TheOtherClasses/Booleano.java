@@ -1,4 +1,4 @@
-package inventedClasses;
+package TheOtherClasses;
 
 public class Booleano {
     private boolean valor;

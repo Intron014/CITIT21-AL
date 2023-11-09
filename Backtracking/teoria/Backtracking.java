@@ -1,6 +1,6 @@
-package backtracking.teoria;
+package Backtracking.teoria;
 
-import inventedClasses.Booleano;
+import TheOtherClasses.Booleano;
 
 import java.util.Arrays;
 

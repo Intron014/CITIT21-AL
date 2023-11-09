@@ -1,4 +1,4 @@
-package inventedClasses;
+package TheOtherClasses;
 
 public class Entero {
     private int valor;

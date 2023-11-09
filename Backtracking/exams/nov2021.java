@@ -1,5 +1,5 @@
-package backtracking.exams;
-import inventedClasses.*;
+package Backtracking.exams;
+import TheOtherClasses.*;
 public class nov2021 {
 
     public boolean[] subSuma0MaxElem(int[] v){

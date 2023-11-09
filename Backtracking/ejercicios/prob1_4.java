@@ -1,8 +1,6 @@
-package backtracking.ejercicios;
+package Backtracking.ejercicios;
 
-import inventedClasses.Entero;
-
-import java.util.Arrays;
+import TheOtherClasses.Entero;
 
 public class prob1_4 {
 

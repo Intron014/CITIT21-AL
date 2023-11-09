@@ -1,6 +1,6 @@
-package backtracking.ejercicios;
+package Backtracking.ejercicios;
 
-import inventedClasses.Booleano;
+import TheOtherClasses.Booleano;
 
 public class prob1_1 {
 

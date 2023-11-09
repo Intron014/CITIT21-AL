@@ -1,4 +1,4 @@
-package DyV;
+package DivideyVenceras;
 
 public class sesion1 {
     // Ejercicio 1.1
