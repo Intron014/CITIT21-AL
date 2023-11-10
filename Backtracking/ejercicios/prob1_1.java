@@ -36,8 +36,10 @@ public class prob1_1 {
             while((c<3) && !exito.getValor()){
                 if(bienes[lvl]<falta[c]){
                     falta[c] = falta[c] + bienes[lvl];
-                    hRER(bienes, c+1, falta, exito);
+                    lvl++;
+                    hRER(bienes, lvl, falta, exito);
                     if(!exito.getValor()){
+                        lvl--;
                         falta[c] = falta[c] - bienes[lvl];
                     }
                 }
