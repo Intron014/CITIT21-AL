@@ -24,7 +24,7 @@ public class Contenedor{
         this.dias = dias;
     }
 
-    public double getBeneficio() {
-        return (double) dias /tiempo;
+    public float getBeneficio() {
+        return ((float) this.dias) / ((float) this.tiempo);
     }
 }
