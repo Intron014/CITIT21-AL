@@ -1,4 +1,4 @@
-package Backtracking.ejercicios;
+package T2Backtracking.ejercicios;
 
 import java.util.Arrays;
 

@@ -1,7 +1,7 @@
-package Voraces.ejercicios;
+package T3Voraces.ejercicios;
 
 import java.util.ArrayList;
-
+import TheOtherClasses.Voraces.prob1_4.*;
 public class prob1_4 {
 
     public ArrayList<Contenedor> rescate (ArrayList<Contenedor> contenedores, int hundir){
@@ -28,36 +28,5 @@ public class prob1_4 {
             }
         }
         return mejor;
-    }
-
-
-    // Clases Requeridas
-    class Contenedor{
-        private int tiempo; // tiempo en minutos que se tarda en recuperar el contenedor
-        private int dias; //número de días que proporciona alimento
-        public Contenedor(int tiempo, int dias){
-            this.tiempo = tiempo;
-            this.dias = dias;
-        }
-
-        public int getTiempo() {
-            return tiempo;
-        }
-
-        public void setTiempo(int tiempo) {
-            this.tiempo = tiempo;
-        }
-
-        public int getDias() {
-            return dias;
-        }
-
-        public void setDias(int dias) {
-            this.dias = dias;
-        }
-
-        public double getBeneficio() {
-            return (double) dias /tiempo;
-        }
     }
 }

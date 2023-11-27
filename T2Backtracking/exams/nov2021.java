@@ -1,4 +1,4 @@
-package Backtracking.exams;
+package T2Backtracking.exams;
 import TheOtherClasses.*;
 public class nov2021 {
 

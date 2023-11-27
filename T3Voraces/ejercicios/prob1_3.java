@@ -1,7 +1,7 @@
-package Voraces.ejercicios;
+package T3Voraces.ejercicios;
 
 import java.util.ArrayList;
-
+import TheOtherClasses.Voraces.prob1_3.*;
 public class prob1_3{
 
     public ArrayList<Conjunto> conjuntoMinimo(int[] u, ArrayList<Conjunto> S){
@@ -52,17 +52,5 @@ public class prob1_3{
                 i++;
         }
         return sol;
-    }
-
-
-    // Clases Requeridas
-    public class Conjunto {
-        private int[] contenido;
-        public Conjunto(int[] contenido){
-            this.contenido = new int[contenido.length];
-            for (int i=0; i<contenido.length; i++) this.contenido[i]=contenido[i];
-        }
-        public int longitud(){ return this.contenido.length; }
-        public int get(int posicion){ return contenido[posicion]; }
     }
 }

@@ -1,4 +1,4 @@
-package DivideyVenceras;
+package T1DivideyVenceras;
 
 public class sesion3 {
     public static void main(String[] args) {

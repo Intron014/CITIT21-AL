@@ -1,4 +1,4 @@
-package DivideyVenceras;
+package T1DivideyVenceras;
 
 public class tema7 {
 

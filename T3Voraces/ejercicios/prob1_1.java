@@ -1,6 +1,7 @@
-package Voraces.ejercicios;
+package T3Voraces.ejercicios;
 
 import java.util.ArrayList;
+import TheOtherClasses.Voraces.prob1_1.*;
 
 public class prob1_1 {
 
@@ -41,31 +42,4 @@ public class prob1_1 {
         }
         return max;
     }
-
-    // Clases requeridas
-    public class Producto {
-        private int nombre;
-        private int peso;
-        Producto (int nombre, int peso){
-            this.nombre = nombre;
-            this.peso = peso;
-        }
-
-        public int getNombre() {
-            return nombre;
-        }
-
-        public void setNombre(int nombre) {
-            this.nombre = nombre;
-        }
-
-        public int getPeso() {
-            return peso;
-        }
-
-        public void setPeso(int peso) {
-            this.peso = peso;
-        }
-    }
-
 }

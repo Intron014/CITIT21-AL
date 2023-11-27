@@ -1,8 +1,7 @@
-package Voraces.ejercicios;
+package T3Voraces.ejercicios;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-
+import TheOtherClasses.Voraces.prob1_2.*;
 public class prob1_2 {
 
     public ArrayList<Grupo> mezclaEstudiantes(ArrayList<Estudiante> listaEst, int numMaxAlumnos){
@@ -59,74 +58,6 @@ public class prob1_2 {
             }
         }
     }
-
-
-    // Clases Requeridas
-    private class Estudiante {
-        private String nombre, apellidos; //nombre apellidos alumno
-        private double nota;
-
-        public Estudiante(String nombre, String apellidos, double nota) {
-            this.nombre = nombre;
-            this.apellidos = apellidos;
-            this.nota = nota;
-        }
-
-        public String getNombre() {
-            return nombre;
-        }
-
-        public void setNombre(String nombre) {
-            this.nombre = nombre;
-        }
-
-        public String getApellidos() {
-            return apellidos;
-        }
-
-        public void setApellidos(String apellidos) {
-            this.apellidos = apellidos;
-        }
-
-        public double getNota() {
-            return nota;
-        }
-
-        public void setNota(double nota) {
-            this.nota = nota;
-        }
-    }
-    private class Grupo {
-        // Un Grupo es un conjunto de N estudiantes
-        private ArrayList<Estudiante> alumnos;
-        private int maxAlumnos;
-        public Grupo(int maxAlumnos){
-            alumnos = new ArrayList<Estudiante>(); this.maxAlumnos=maxAlumnos;
-        }
-        public Grupo(ArrayList<Estudiante> lista, int maxAlumnos){
-            alumnos = new ArrayList<Estudiante>(lista); this.maxAlumnos=maxAlumnos;
-        }
-
-        public ArrayList<Estudiante> getAlumnos() {
-            return alumnos;
-        }
-
-        public void setAlumnos(ArrayList<Estudiante> alumnos) {
-            this.alumnos = alumnos;
-        }
-
-        public int getMaxAlumnos() {
-            return maxAlumnos;
-        }
-
-        public void setMaxAlumnos(int maxAlumnos) {
-            this.maxAlumnos = maxAlumnos;
-        }
-
-        public int getAlumnosRestantes(){ return maxAlumnos-alumnos.size();}
-        public void aniadeAlumno(Estudiante e){ alumnos.add(e);}
-    }
-
 }
 
 

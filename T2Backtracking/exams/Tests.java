@@ -1,4 +1,4 @@
-package Backtracking.exams;
+package T2Backtracking.exams;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;

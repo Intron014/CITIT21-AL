@@ -1,4 +1,4 @@
-package Backtracking.teoria;
+package T2Backtracking.teoria;
 
 import TheOtherClasses.Booleano;
 

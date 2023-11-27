@@ -1,4 +1,4 @@
-package Backtracking.teoria;
+package T2Backtracking.teoria;
 import TheOtherClasses.*;
 public class SeleccionOptima {
     int[] problema2undescore4mine(int[] pesos, int pMax, int[] pesosMochilas, int nivel, int[] mejorSolucion, int mejorDiferencia, Booleano exito) {
