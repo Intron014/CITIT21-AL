@@ -2,11 +2,10 @@ package T3Voraces.exams;
 
 public class jul2019 {
 
-    /*
-     Nos dan un vector de N números enteros, y un número K. Podemos
-     transformar el vector multiplicando por -1 uno de sus elementos. Deseamos
-     transformar el vector K veces exactas de manera que la suma de sus elementos
-     sea máxima.
+    /**
+     * Nos dan un vector de N números enteros, y un número K. Podemos
+     * transformar el vector multiplicando por -1 uno de sus elementos. Deseamos
+     * transformar el vector K veces exactas de manera que la suma de sus elementos
      */
 
     public int[] vectorTransformado(int[] vector, int k){

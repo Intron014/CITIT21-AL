@@ -6,16 +6,16 @@ import java.util.ArrayList;
 
 public class dec2017 {
 
-    /*
-     La filmoteca ha organizado un maratón de cine de
-     terror. Durante 24 horas se proyectarán películas (todas diferentes) en las N salas
-     disponibles. El Joker, gran aficionado a este género de películas, ha conseguido la programación
-     completa donde aparecen todas las películas que se van a proyectar durante el maratón:
-     junto con el título, nombre del director, duración de la película y otros datos de interés,
-     se indica la sala de proyección y la hora de comienzo. El objetivo del Joker es ver el
-     máximo número posible de películas. Ayúdale a planificar su maratón de cine,
-     implementando el método ArrayList<Pelicula> obtenerListado(ArrayList<Pelicula> candidatos)
-     en Java, basado en un esquema voraz, que devuelva la lista de películas seleccionadas.
+    /**
+     * La filmoteca ha organizado un maratón de cine de
+     * terror. Durante 24 horas se proyectarán películas (todas diferentes) en las N salas
+     * disponibles. El Joker, gran aficionado a este género de películas, ha conseguido la programación
+     * completa donde aparecen todas las películas que se van a proyectar durante el maratón:
+     * junto con el título, nombre del director, duración de la película y otros datos de interés,
+     * se indica la sala de proyección y la hora de comienzo. El objetivo del Joker es ver el
+     * máximo número posible de películas. Ayúdale a planificar su maratón de cine,
+     * implementando el método ArrayList<Pelicula> obtenerListado(ArrayList<Pelicula> candidatos)
+     * en Java, basado en un esquema voraz, que devuelva la lista de películas seleccionadas.
      */
 
     public ArrayList<Pelicula> obtenerListado(ArrayList<Pelicula> candidatos){

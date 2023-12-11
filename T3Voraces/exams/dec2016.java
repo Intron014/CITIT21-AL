@@ -4,13 +4,15 @@ import java.util.ArrayList;
 
 public class dec2016 {
 
-    /*
-     Diseñar e implementar el método boolean hayDivision(int[] valores)
-     en Java basado en el esquema voraz, que permita determinar si, dado un
-     conjunto de números enteros positivos mayores que 0, existen dos subconjuntos
-     que sumen exactamente el mismo valor, y que cada uno contenga la mitad de los
-     números del vector valores
+
+    /**
+     * Diseñar e implementar el método boolean hayDivision(int[] valores)
+     * en Java basado en el esquema voraz, que permita determinar si, dado un
+     * conjunto de números enteros positivos mayores que 0, existen dos subconjuntos
+     * que sumen exactamente el mismo valor, y que cada uno contenga la mitad de los
+     * números del vector valores
      */
+
 
     public boolean hayDivision(int[] valores){
         if(valores.length%2!=0)
