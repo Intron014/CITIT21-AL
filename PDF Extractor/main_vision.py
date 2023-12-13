@@ -53,7 +53,10 @@ def extract_images_v1(pdf_path, output_folder):
     pdfname = os.path.splitext(os.path.basename(pdf_path))[0]
 
     for i in range(num_pages):
-        print(f"Looking for rectangles in page {i+1}")
+        if i < 10:
+            print(f"Looking for rectangles in page 0{i+1}, file: {pdfname}")
+        else:
+            print(f"Looking for rectangles in page {i+1}, file: {pdfname}")
         images = convert_from_path(pdf_path, first_page=i+1, last_page=i+1)
         for j, image in enumerate(images):
             rectangles = find_rectangles(image)
@@ -76,7 +79,10 @@ def extract_images_v2(pdf_path, output_folder):
     total_rectangles = 0
 
     for i in range(num_pages):
-        print(f"Looking for rectangles in page {i+1}")
+        if i < 10:
+            print(f"Looking for rectangles in page 0{i+1}, file: {pdfname}")
+        else:
+            print(f"Looking for rectangles in page {i+1}, file: {pdfname}")
         images = convert_from_path(pdf_path, first_page=i+1, last_page=i+1)
         for j, image in enumerate(images):
             rectangles = find_rectangles(image)
