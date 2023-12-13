@@ -28,7 +28,7 @@ def find_rectangles(image):
             x, y, w, h = cv2.boundingRect(contour)
             if w == 1000 and h == 750:
                 rectangles_top.append((x, y, x+w, y+h))
-                print(f"Rectangle found in top half with size {w}x{h}")
+                # print(f"Rectangle found in top half with size {w}x{h}")
 
     contours_bottom, _ = cv2.findContours(bottom_half, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
 
@@ -42,7 +42,7 @@ def find_rectangles(image):
             x, y, w, h = cv2.boundingRect(contour)
             if w == 1000 and h == 750:
                 rectangles_bottom.append((x, y + height//2, x+w, y+h + height//2))
-                print(f"Rectangle found in bottom half with size {w}x{h}")
+                # print(f"Rectangle found in bottom half with size {w}x{h}")
     return rectangles_top + rectangles_bottom
 
 
@@ -60,7 +60,7 @@ def extract_images_v1(pdf_path, output_folder):
             for k, coords in enumerate(rectangles):
                 cropped_image = image.crop(coords)
                 cropped_image.save(os.path.join(output_folder, f"{pdfname}_{i*len(rectangles)+k+1}.png"))
-                print(f"Saved rectangle {k+1} from page {i+1} as {pdfname}_{i*len(rectangles)+k+1}.png")
+                # print(f"Saved rectangle {k+1} from page {i+1} as {pdfname}_{i*len(rectangles)+k+1}.png")
 
 
 def extract_images_v2(pdf_path, output_folder):
@@ -68,13 +68,11 @@ def extract_images_v2(pdf_path, output_folder):
     pdf = PdfFileReader(pdf_path)
     num_pages = pdf.getNumPages()
 
-    # Calculate the maximum number and its number of digits
     max_num = num_pages * 2
     num_digits = len(str(max_num))
 
     pdfname = os.path.splitext(os.path.basename(pdf_path))[0]
 
-    # Initialize total rectangles counter
     total_rectangles = 0
 
     for i in range(num_pages):
@@ -84,12 +82,10 @@ def extract_images_v2(pdf_path, output_folder):
             rectangles = find_rectangles(image)
             for k, coords in enumerate(rectangles):
                 cropped_image = image.crop(coords)
-                # Increment total rectangles counter
                 total_rectangles += 1
-                # Format the output file name with leading zeros using total_rectangles
                 output_file = f"{pdfname}_{total_rectangles:0{num_digits}d}.png"
                 cropped_image.save(os.path.join(output_folder, output_file))
-                print(f"Saved rectangle {total_rectangles} from page {i+1} as {output_file}")
+                # print(f"Saved rectangle {total_rectangles} from page {i+1} as {output_file}")
 
 
 def bulk_extract_images(method):
