@@ -18,6 +18,9 @@ def find_rectangles(image):
 
     contours_top, _ = cv2.findContours(top_half, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
 
+    standw = 1000
+    standh = 700
+
     rectangles_top = []
 
     for contour in contours_top:
@@ -26,7 +29,7 @@ def find_rectangles(image):
 
         if len(approx) == 4:
             x, y, w, h = cv2.boundingRect(contour)
-            if w == 1000 and h == 750:
+            if w >= standw and h >= standh:
                 rectangles_top.append((x, y, x+w, y+h))
                 # print(f"Rectangle found in top half with size {w}x{h}")
 
@@ -40,7 +43,7 @@ def find_rectangles(image):
 
         if len(approx) == 4:
             x, y, w, h = cv2.boundingRect(contour)
-            if w == 1000 and h == 750:
+            if w >= standw and h >= standh:
                 rectangles_bottom.append((x, y + height//2, x+w, y+h + height//2))
                 # print(f"Rectangle found in bottom half with size {w}x{h}")
     return rectangles_top + rectangles_bottom
@@ -53,7 +56,7 @@ def extract_images_v1(pdf_path, output_folder):
     pdfname = os.path.splitext(os.path.basename(pdf_path))[0]
 
     for i in range(num_pages):
-        if i < 10:
+        if i < 9:
             print(f"Looking for rectangles in page 0{i+1}, file: {pdfname}")
         else:
             print(f"Looking for rectangles in page {i+1}, file: {pdfname}")
@@ -79,7 +82,7 @@ def extract_images_v2(pdf_path, output_folder):
     total_rectangles = 0
 
     for i in range(num_pages):
-        if i < 10:
+        if i < 9:
             print(f"Looking for rectangles in page 0{i+1}, file: {pdfname}")
         else:
             print(f"Looking for rectangles in page {i+1}, file: {pdfname}")
