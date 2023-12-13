@@ -15,6 +15,7 @@ folders = os.listdir(input_dir)
 
 # For each folder in the list
 for folder in folders:
+    print(f"Stitching {folder}...")
     # Get a list of all the images in the folder
     images = os.listdir(os.path.join(input_dir, folder))
     # Sort the list of images to ensure they are in the correct order
@@ -37,3 +38,4 @@ for folder in folders:
         pdf.image(os.path.join(input_dir, folder, image), 0, 0, width_pt, height_pt)
     # Save the PDF file with the same name as the folder in the output directory
     pdf.output(os.path.join(output_dir, f"{folder}.pdf"))
+    print(f"Stitched {folder}! Folders left: {len(folders) - folders.index(folder) - 1}")
