@@ -54,12 +54,34 @@ def find_rectangles(image):
     return rectangles_top + rectangles_bottom
 
 
+#def extract_images(pdf_path):
+#    output_folder = "cheese"
+#    os.makedirs(output_folder, exist_ok=True)
+#
+#    pdf = PdfFileReader(pdf_path)
+#    num_pages = pdf.getNumPages()
+#
+#    for i in range(num_pages):
+#        print(f"Looking for rectangles in page {i+1}")
+#        images = convert_from_path(pdf_path, first_page=i+1, last_page=i+1)
+#        for j, image in enumerate(images):
+#            rectangles = find_rectangles(image)
+#            for k, coords in enumerate(rectangles):
+#                # Crop image for the rectangle and save
+#                cropped_image = image.crop(coords)
+#                cropped_image.save(os.path.join(output_folder, f"output_{i*len(rectangles)+k+1}.png"))
+#                print(f"Saved rectangle {k+1} from page {i+1} as output_{i*len(rectangles)+k+1}.png")
+
 def extract_images(pdf_path):
     output_folder = "cheese"
     os.makedirs(output_folder, exist_ok=True)
 
     pdf = PdfFileReader(pdf_path)
     num_pages = pdf.getNumPages()
+
+    # Calculate the maximum number and its number of digits
+    max_num = num_pages * 2
+    num_digits = len(str(max_num))
 
     for i in range(num_pages):
         print(f"Looking for rectangles in page {i+1}")
@@ -69,7 +91,9 @@ def extract_images(pdf_path):
             for k, coords in enumerate(rectangles):
                 # Crop image for the rectangle and save
                 cropped_image = image.crop(coords)
-                cropped_image.save(os.path.join(output_folder, f"output_{i*len(rectangles)+k+1}.png"))
-                print(f"Saved rectangle {k+1} from page {i+1} as output_{i*len(rectangles)+k+1}.png")
+                # Format the output file name with leading zeros
+                output_file = f"output_{(i*len(rectangles)+k+1):0{num_digits}d}.png"
+                cropped_image.save(os.path.join(output_folder, output_file))
+                print(f"Saved rectangle {k+1} from page {i+1} as {output_file}")
 
 extract_images(ppath)

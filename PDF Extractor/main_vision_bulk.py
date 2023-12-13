@@ -5,8 +5,6 @@ from pdf2image import convert_from_path
 import os
 import glob
 
-ppath = "a.pdf"
-
 
 def find_rectangles(image):
     open_cv_image = np.array(image)
@@ -47,7 +45,8 @@ def find_rectangles(image):
                 print(f"Rectangle found in bottom half with size {w}x{h}")
     return rectangles_top + rectangles_bottom
 
-def extract_images(pdf_path, output_folder):
+
+def extract_images_v1(pdf_path, output_folder):
     os.makedirs(output_folder, exist_ok=True)
     pdf = PdfFileReader(pdf_path)
     num_pages = pdf.getNumPages()
@@ -63,10 +62,44 @@ def extract_images(pdf_path, output_folder):
                 cropped_image.save(os.path.join(output_folder, f"{pdfname}_{i*len(rectangles)+k+1}.png"))
                 print(f"Saved rectangle {k+1} from page {i+1} as {pdfname}_{i*len(rectangles)+k+1}.png")
 
-def bulk_extract_images():
+
+def extract_images_v2(pdf_path, output_folder):
+    os.makedirs(output_folder, exist_ok=True)
+    pdf = PdfFileReader(pdf_path)
+    num_pages = pdf.getNumPages()
+
+    # Calculate the maximum number and its number of digits
+    max_num = num_pages * 2
+    num_digits = len(str(max_num))
+
+    pdfname = os.path.splitext(os.path.basename(pdf_path))[0]
+
+    # Initialize total rectangles counter
+    total_rectangles = 0
+
+    for i in range(num_pages):
+        print(f"Looking for rectangles in page {i+1}")
+        images = convert_from_path(pdf_path, first_page=i+1, last_page=i+1)
+        for j, image in enumerate(images):
+            rectangles = find_rectangles(image)
+            for k, coords in enumerate(rectangles):
+                cropped_image = image.crop(coords)
+                # Increment total rectangles counter
+                total_rectangles += 1
+                # Format the output file name with leading zeros using total_rectangles
+                output_file = f"{pdfname}_{total_rectangles:0{num_digits}d}.png"
+                cropped_image.save(os.path.join(output_folder, output_file))
+                print(f"Saved rectangle {total_rectangles} from page {i+1} as {output_file}")
+
+
+def bulk_extract_images(method):
     pdf_files = glob.glob("input/*.pdf")
     for pdf_file in pdf_files:
         output_folder = os.path.join("output", os.path.splitext(os.path.basename(pdf_file))[0])
-        extract_images(pdf_file, output_folder)
+        if method:
+            extract_images_v1(pdf_file, output_folder)
+        else:
+            extract_images_v2(pdf_file, output_folder)
 
-bulk_extract_images()
+
+bulk_extract_images(0)
